@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "d3428d04-3c39-46e4-b697-3f8d83d60e24",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19991952"
+	},
+	"item": [
+		{
+			"name": "create material",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"sample_type\",\n    \"name\": \"sample_name\",\n    \"description\": \"sample_desc\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:9999/materials",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "9999",
+					"path": [
+						"materials"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

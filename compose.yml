@@ -1,0 +1,25 @@
+services:
+  warehouse-app:
+    build: .
+    container_name: warehouse
+    ports:
+      - "9999:9999"
+    network_mode: host
+    env_file:
+      - .env
+    depends_on:
+      - warehouse-db
+  warehouse-db:
+    image: postgres
+    container_name: warehouse-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
